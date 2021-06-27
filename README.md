@@ -3,8 +3,9 @@ A Powershell script that lets you launch RuneLite through Steam
 
 ## Getting Started
 All you need to get up and running is to [download a zip of the repo](https://github.com/ewisted/Migrate-RuneLiteToSteam/archive/refs/heads/main.zip), a [RuneLite installation](https://runelite.net/), an [OSRS Steam client installation](https://store.steampowered.com/app/1343370/Old_School_RuneScape/), and Powershell. Once you have those, just follow these steps:
-1. Open up a Powershell window in the directory you downloaded the repo to. The easiest way to do this is to navigate to the folder you downloaded the script to in File Explorer, type `powershell` in the navigation bar, and hit enter.
-2. Enter the following command in the Powershell window. Make sure to replace the placeholder variables with your installation paths.
+1. Extract the `Migrate-RuneliteToSteam.ps1` file from the downloaded zip to wherever you wish to keep it.
+2. Open up a Powershell window in the directory you extracted the script to. The easiest way to do this is to navigate to the folder containing the script to in File Explorer, type `powershell` in the navigation bar, and hit enter.
+3. Enter the following command in the Powershell window. Make sure to replace the placeholder variables with your installation paths.
   ```
   .\Migrate-RuneliteToSteam.ps1 -RuneLiteInstallPath "path-to-runelite-files" -SteamClientInstallPath "path-to-steam-client-files"
   ```
