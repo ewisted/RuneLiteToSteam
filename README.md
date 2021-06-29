@@ -7,7 +7,7 @@ All you need to get up and running is to [download a zip of the repo](https://gi
 2. Open up a Powershell window as administrator in the directory you extracted the script to. The easiest way to do this is to navigate to the folder containing the script to in File Explorer, click `File` in the top-left corner then hover over `Open Windows Powershell` and click `Open Windows Powershell as administrator`.
 3. Enter the following commands in the Powershell window. Make sure to replace the placeholder variables with your installation/script paths.
   ```
-  Unblock-File -Path "path-to-downloaded script"
+  Unblock-File -Path "path-to-downloaded-script"
   .\Migrate-RuneliteToSteam.ps1 -RuneLiteInstallPath "path-to-runelite-files" -SteamClientInstallPath "path-to-steam-client-files"
   ```
 As long as there were no errors, launching OSRS through Steam should now launch RuneLite.
