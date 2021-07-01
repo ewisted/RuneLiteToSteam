@@ -1,0 +1,54 @@
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.2.0
+
+jobs:
+  module_lint:
+    executor:
+      name: win/default
+      shell: powershell.exe
+
+    steps:
+      - checkout
+      - run:
+          name: Install PSScriptAnalyzer
+          shell: powershell.exe
+          command: |
+            Set-PSRepository PSGallery -InstallationPolicy Trusted
+            Install-Module PSScriptAnalyzer -Repository PSGallery -Force
+      - run:
+          name: Lint Module
+          shell: powershell.exe
+          command: Invoke-ScriptAnalyzer -Path '*.ps*1' -Recurse -Verbose
+
+  module_deploy:
+    executor:
+        name: win/default
+        shell: powershell.exe
+
+    steps:
+      - checkout
+      - run:
+          name: Install PSScriptAnalyzer
+          shell: powershell.exe
+          command: |
+            Set-PSRepository PSGallery -InstallationPolicy Trusted
+            Install-Module PowerShellGet -Repository PSGallery -Force
+      - run:
+          name: Deploy Module
+          shell: powershell.exe
+          command: Publish-Module -Path '.\RuneLiteToSteam\src' -NuGetApiKey $NUGET_API_KEY -Verbose
+
+workflows:
+  linting:
+    jobs:
+      - module_lint
+      - module_deploy:
+          requires:
+            - module_lint
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+$/
