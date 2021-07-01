@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Lint Module
           shell: powershell.exe
-          command: Invoke-ScriptAnalyzer -Path '*.ps*1' -Recurse -Verbose
+          command: Invoke-ScriptAnalyzer -Path '.\src\*.ps*1' -Recurse -Verbose
 
   module_deploy:
     executor:
@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Deploy Module
           shell: powershell.exe
-          command: Publish-Module -Path '.\RuneLiteToSteam\src' -NuGetApiKey $NUGET_API_KEY -Verbose
+          command: Publish-Module -Path '.\src' -NuGetApiKey $NUGET_API_KEY -Verbose
 
 workflows:
   linting:

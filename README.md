@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/ewisted/RuneLiteToSteam/tree/main.svg?style=svg&circle-token=8c654f518bad9bbf7a3940c4fd75e4fe1c71d53a)](https://circleci.com/gh/ewisted/RuneLiteToSteam)
+
 # RuneLiteToSteam
 A Powershell module that helps you launch RuneLite through Steam.
 
