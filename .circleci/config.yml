@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Lint Module
           shell: powershell.exe
-          command: Invoke-ScriptAnalyzer -Path '*.ps*1' -Recurse -Verbose
+          command: Invoke-ScriptAnalyzer -Path '.\RuneLiteToSteam\src\*.ps*1' -Recurse -Verbose
 
   module_deploy:
     executor:
