@@ -17,7 +17,7 @@ Reverting back is simple. Just run the copy command again with the `-Revert` swi
   Copy-RuneLiteToSteam -Revert
   ```
   
-## Run at startup/logon
+## Run at Startup/Logon
 Eventually Steam is going to update OSRS and overwrite RuneLite or RuneLite could be updated from its orginal install location. The script takes these cases into account and keeps track of RuneLite's MD5 hash in order to be idempotent. Therefore, it is recommended to schedule to run the script at startup or logon. To do so just follow these steps:
 1. Open up a Powershell window as administrator (type `Powershell` in Windows Search, right click it, and select `Run as administrator`)
 2. Run the Copy-RuneLiteToSteam command with the `-Schedule` parameter. It accepts either `Startup` or `Logon`.
